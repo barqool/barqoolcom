@@ -1,123 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Barqool – Say Goodbye to Food Waste</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fdfdfd;
-      color: #000;
-    }
-    header {
-      background: #d7c4a3;
-      padding: 4rem 2rem;
-      text-align: center;
-      border-bottom: 4px solid #000;
-    }
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-    }
-    header p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-    .cta-button {
-      background-color: #000;
-      color: #fff;
-      padding: 0.75rem 2rem;
-      border: 3px solid #000;
-      font-size: 1.1rem;
-      margin-top: 2rem;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-    .cta-button:hover {
-      background-color: #fff;
-      color: #000;
-    }
-    .section {
-      padding: 4rem 2rem;
-      text-align: center;
-      border-top: 4px solid #000;
-    }
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-    }
-    .stats-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .stat {
-      background-color: #ffffff;
-      padding: 2rem;
-      border: 3px solid #000;
-      width: 280px;
-      text-align: left;
-    }
-    .stat h3 {
-      font-size: 1.5rem;
-      margin-top: 0;
-      color: #b86b3e;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 1rem;
-      background-color: #d7c4a3;
-      border-top: 4px solid #000;
-    }
-    footer a {
-      color: #000;
-      text-decoration: underline;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Barqool — Your business, at a glance</title>
+<meta name="description" content="Get a one-off Barqool Report: we scan your Google reviews, social mentions, and competitor reviews, then send a concise PDF + slides. Like it? Subscribe for weekly briefs at £15/month." />
+<!-- Fonts: Inter (body) + Bricolage Grotesque (headings) -->
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fcf6f1; --ink:#2b221b; --muted:#6b5a4d;
+  --brown:#6e4b2e; --brown-900:#4b3420; --tan:#d7a96b;
+  --orange:#ff6a33; --green:#10a574; --yellow:#ffcc55;
+  --card:#ffffff; --line:#efe8e2; --shadow:0 8px 30px rgba(43,34,27,.06);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--cream);color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  scroll-behavior:smooth}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Bricolage Grotesque",Inter,system-ui;letter-spacing:-.01em;margin:0 0 12px}
+h1{font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.08;font-weight:800}
+h2{font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0 0 12px;color:var(--muted);line-height:1.65}
+b,strong{color:var(--ink);font-weight:700}
+ul,ol{margin:0;padding-left:0;color:var(--muted);line-height:1.8;list-style:none}
+li{margin-bottom:8px;padding-left:28px;position:relative}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}
+.container--narrow{max-width:960px}
+.section{padding:80px 0}
+.section-header{text-align:center;max-width:720px;margin:0 auto 48px}
+.grid-2{display:grid;gap:24px;grid-template-columns:repeat(2,1fr);align-items:start}
+.grid-3{display:grid;gap:24px;grid-template-columns:repeat(3,1fr);align-items:start}
+.d-flex{display:flex;align-items:center}
+.space-between{justify-content:space-between}
+.section-divider{height:1px;background:var(--line);max-width:1080px;margin:0 auto}
+.badge{display:inline-flex;gap:.45rem;align-items:center;padding:.35rem .7rem;border-radius:999px;background:#f6efe8;color:var(--brown-900);font-weight:700;font-size:.88rem;border:1px solid #eadfda}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.15rem;border-radius:14px;font-weight:700;border:1px solid transparent;transition:.2s ease;cursor:pointer}
+.btn--brand{background:var(--brown);color:#fff}
+.btn--brand:hover{filter:brightness(.95)}
+.btn--ghost{background:#fff;border-color:var(--line)}
+.btn--ghost:hover{border-color:#e2d9d3}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+.icon{width:32px;height:32px;border-radius:9px;display:inline-grid;place-items:center;background:#fff;border:1px solid var(--line);font-weight:800;font-size:1.2rem;margin-bottom:16px}
+.icon--brand-bg{background:var(--brown);color:#fff;border-color:transparent}
+/* Ribbon */
+.ribbon{background:linear-gradient(90deg,var(--yellow),var(--tan));color:#2b221b}
+.ribbon .container{justify-content:center;padding:10px 20px;font-weight:800;text-align:center;flex-wrap:wrap}
+.ribbon a{color:#2b221b;text-decoration:underline;margin-left:8px}
+/* Topbar */
+.topbar-wrap{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);
+  background:color-mix(in oklab,var(--cream) 85%,white);border-bottom:1px solid var(--line)}
+.topbar{padding:12px 20px;gap:16px}
+.logo{gap:10px}
+.logo .icon{width:28px;height:28px;font-size:1rem;margin-bottom:0}
+.logo__name{font-family:"Bricolage Grotesque",system-ui;font-size:1.08rem;font-weight:800}
+.main-nav{gap:18px}
+/* Hero */
+.hero{padding:110px 0 60px;text-align:center}
+.hero h1{margin-top:10px}
+.hero p{max-width:680px;margin-left:auto;margin-right:auto}
+.hero ul{display:inline-block;text-align:left;margin:12px 0}
+.hero ul li::before{content:'☕';position:absolute;left:0}
+.hero__actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;justify-content:center}
+/* How */
+.how-flow-container{max-width:800px;margin:0 auto}
+.flow-step{padding:32px;border:1px solid var(--line);border-radius:var(--radius);display:flex;gap:32px;align-items:center}
+.flow-step:nth-child(odd){background:var(--card)}
+.flow-step__number{width:50px;height:50px;border-radius:50%;background:var(--brown);color:#fff;display:grid;place-items:center;font-size:1.5rem;font-weight:700;font-family:"Bricolage Grotesque",system-ui;flex-shrink:0}
+.flow-step__content h3{margin-bottom:4px}
+.flow-step:not(:last-child){margin-bottom:24px}
+/* Testimonials */
+.testimonial-card{text-align:center}
+.testimonial-card__quote{font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:16px}
+.testimonial-card__author{font-weight:700;color:var(--ink)}
+.testimonial-card__biz{font-size:.9rem;color:var(--muted)}
+/* Inside + Price */
+#inside .grid-2{align-items:stretch}
+#inside .card{display:flex;flex-direction:column}
+#inside .price{font-size:2rem;font-weight:800;margin-top:6px}
+#inside .price-freq{font-size:1rem;color:var(--muted)}
+#inside .card-actions{margin-top:auto;display:flex;gap:12px;flex-wrap:wrap}
+#inside ul li::before{content:'➡️';position:absolute;left:0}
+/* Final CTA */
+.final-cta{text-align:center;padding-top:0}
+.final-cta .card{background:var(--brown);color:var(--cream);padding:50px}
+.final-cta h2,.final-cta p{color:var(--cream)}
+.final-cta .btn{margin-top:12px;background:var(--cream);color:var(--brown)}
+.final-cta .btn:hover{background:#fff;color:var(--brown)}
+/* New sections */
+#who .pill{display:inline-block;border:1px dashed var(--line);border-radius:999px;padding:.45rem .8rem;margin:.25rem .35rem;background:#fff}
+#trust .trust-cards{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+#trust .trust-cards .card{display:flex;gap:12px;align-items:flex-start}
+#roadmap .roadmap-list{display:grid;gap:12px}
+#roadmap .roadmap-list li::before{content:'🟤';left:0}
+/* Responsive */
+@media (max-width:980px){
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  #trust .trust-cards{grid-template-columns:1fr}
+}
+@media (max-width:768px){
+  h1{font-size:2rem} h2{font-size:1.5rem}
+  .section{padding:50px 0} .hero{padding:80px 0 40px}
+  .topbar{flex-direction:column;gap:12px}
+  .main-nav a:not(.btn){display:none}
+  .flow-step{flex-direction:column;text-align:center}
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Barqool</h1>
-    <p>We're based in Dundee, Scotland, and we’re on a bold mission to tackle household food waste. Barqool helps you manage shared groceries, discover smart recipes, and track expenses — all in one powerful, community-first app.</p>
-    <br>
-    <p>We're not just building tools for consumers — Barqool is also exploring partnerships with businesses and organizations to help them monitor inventory, improve efficiency, and reduce avoidable food waste across their operations.</p>
-  </header>
 
-  <section class="section">
-    <h2>Why It Matters</h2>
-    <div class="stats-container">
-      <div class="stat">
-        <h3>10.7 Million Tonnes</h3>
-        <p>Food waste generated annually in the UK — most of it from households.</p>
+<!-- Ribbon -->
+<div class="ribbon">
+  <div class="container d-flex">
+    <span>🎁 Try Barqool once — free. Get a custom report (PDF + slides) for your business.</span>
+    <a href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get it now</a>
+  </div>
+</div>
+
+<!-- Topbar -->
+<header class="topbar-wrap">
+  <div class="container topbar d-flex space-between">
+    <a href="/" class="logo d-flex">
+      <div class="icon icon--brand-bg">B</div>
+      <strong class="logo__name">Barqool</strong>
+    </a>
+    <nav class="main-nav d-flex">
+      <a href="#why">Why</a>
+      <a href="#how">How it works</a>
+      <a href="#inside">What’s inside</a>
+      <a href="#who">Who it’s for</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" class="btn btn--brand" target="_blank" rel="noopener noreferrer">Get my free report</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container container--narrow">
+      <span class="badge">Built in Dundee</span>
+      <h1>Your business, at a glance.</h1>
+      <p>We scan your <b>Google reviews</b>, <b>Instagram mentions</b>, <b>Facebook chatter</b>, and <b>competitor reviews</b>. You get a one-off <b>Barqool Report</b> with insights, reply drafts, and ready-to-post captions.</p>
+      <ul>
+        <li>New reviews + ready-to-post replies</li>
+        <li>Who mentioned you on socials</li>
+        <li>Competitor promos spotted in Google reviews</li>
+        <li>3 Instagram captions to copy-paste</li>
+      </ul>
+      <div class="hero__actions">
+        <a class="btn btn--brand" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get my free report</a>
+        <a class="btn btn--ghost" href="#inside">See what’s inside</a>
       </div>
-      <div class="stat">
-        <h3>£21.8 Billion</h3>
-        <p>The total value of edible food wasted. Let’s redirect that to better use.</p>
+      <p style="margin-top:10px">
+        Like it? Subscribe for a fresh brief <b>every week</b> — just <b>£15/month</b>.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" class="section">
+    <div class="container">
+      <div class="section-header">
+          <h2>Why bother?</h2>
+          <p>Most owners miss reviews, don’t post regularly, and hardly ever track competitors. Barqool does the scanning; AI cleans the noise. You get the signal — without the faff.</p>
       </div>
-      <div class="stat">
-        <h3>Local Impact</h3>
-        <p>In Scotland alone, over 1 million tonnes of food go to waste every year. Barqool was born here to fight that.</p>
+      <div class="grid-3">
+          <div class="card">
+              <div class="icon">⏱️</div>
+              <h3>Save time</h3>
+              <p>No more scrolling for hours. Get the highlights in minutes.</p>
+          </div>
+          <div class="card">
+              <div class="icon">📈</div>
+              <h3>Look active</h3>
+              <p>Reply fast with drafts and keep posting with weekly captions.</p>
+          </div>
+          <div class="card">
+              <div class="icon">🧭</div>
+              <h3>Stay sharp</h3>
+              <p>Know what your rivals are doing before your customers do.</p>
+          </div>
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>Barqool is proudly built in Dundee, Scotland — a city with a heart for sustainability and community-driven innovation.<br>
-    Interested in collaborating or just saying hi? <a href="mailto:hello@barqool.com">hello@barqool.com</a></p>
-    <p>&copy; 2025 Barqool. All rights reserved.</p>
-  </footer>
+  <!-- HOW -->
+  <section id="how" class="section">
+    <div class="container">
+      <div class="section-header"><h2>How it works</h2></div>
+      <div class="how-flow-container">
+        <div class="flow-step">
+          <div class="flow-step__number">1</div>
+          <div class="flow-step__content">
+            <h3>Share your links</h3>
+            <p>Pop your Google Maps profile, Instagram handle, and one competitor into the form.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">2</div>
+          <div class="flow-step__content">
+            <h3>We scan & summarise</h3>
+            <p>We check reviews, mentions, and competitor chatter — then condense it into plain English.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step__number">3</div>
+          <div class="flow-step__content">
+            <h3>Your one-off report</h3>
+            <p>We email your PDF + slides. If you love it, subscribe to get fresh briefs every week.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero__actions" style="margin-top:24px">
+        <a class="btn btn--brand" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get my free report</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-header"><h2>Loved by locals</h2></div>
+      <div class="grid-3">
+        <div class="card testimonial-card">
+          <p class="testimonial-card__quote">"The report is a game-changer. I feel more connected to our customers."</p>
+          <p class="testimonial-card__author">Jane D.</p>
+          <p class="testimonial-card__biz">Pilot user, Dundee</p>
+        </div>
+        <div class="card testimonial-card">
+          <p class="testimonial-card__quote">"Used to take hours. Now I skim it over a coffee."</p>
+          <p class="testimonial-card__author">Mike P.</p>
+          <p class="testimonial-card__biz">Pilot user, Dundee</p>
+        </div>
+        <div class="card testimonial-card">
+          <p class="testimonial-card__quote">"Catching competitor promos early keeps us a step ahead."</p>
+          <p class="testimonial-card__author">Sarah L.</p>
+          <p class="testimonial-card__biz">Pilot user, Dundee</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- WHAT'S INSIDE + PRICE -->
+  <section id="inside" class="section">
+    <div class="container grid-2">
+      <div class="card">
+        <h2>What’s inside the report</h2>
+        <ul>
+          <li><b>Reviews</b> — every new one + draft reply</li>
+          <li><b>Mentions</b> — who tagged you, what they said</li>
+          <li><b>Competitor signals</b> — promos customers mention</li>
+          <li><b>3 captions</b> — ready to paste into Instagram</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Pricing</h2>
+        <p><span class="badge">First report: free</span></p>
+        <p class="price" style="margin-top:8px">£15<span class="price-freq">/month</span></p>
+        <p>Get a fresh brief every week. Cancel any time.</p>
+        <div class="card-actions">
+          <a class="btn btn--brand" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get my free report</a>
+          <a class="btn btn--ghost" href="#how">How it works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section id="who" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Who it’s for</h2>
+        <p>Any local business that lives on reviews and word-of-mouth.</p>
+      </div>
+      <div style="text-align:center">
+        <span class="pill">Cafés & Restaurants</span>
+        <span class="pill">Bars & Takeaways</span>
+        <span class="pill">Salons & Barbers</span>
+        <span class="pill">Gyms & Studios</span>
+        <span class="pill">Local Retail</span>
+        <span class="pill">Clinics & Dentists</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section id="trust" class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-header">
+        <h2>Your data is safe</h2>
+        <p>We only use public data and store your reports securely.</p>
+      </div>
+      <div class="trust-cards">
+        <div class="card"><div class="icon">🔐</div><div><b>Public data only</b><p>Reviews and public mentions — nothing behind logins.</p></div></div>
+        <div class="card"><div class="icon">📜</div><div><b>GDPR-friendly</b><p>Simple consent on the form. Opt out any time.</p></div></div>
+        <div class="card"><div class="icon">🇬🇧</div><div><b>Built in Dundee</b><p>Local support, UK-based hosting.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap" class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-header">
+        <h2>Where we’re headed</h2>
+        <p>Barqool is just getting started. Here’s what’s next.</p>
+      </div>
+      <div class="container--narrow">
+        <ul class="roadmap-list">
+          <li><b>Deeper competitor insights</b> — menus, promos and events (from public sources).</li>
+          <li><b>More channels</b> — TikTok and TripAdvisor support.</li>
+          <li><b>Custom alerts</b> — set keywords and only get what matters.</li>
+          <li><b>Team sharing</b> — send briefs to staff so everyone’s aligned.</li>
+        </ul>
+      </div>
+      <div class="hero__actions" style="margin-top:24px">
+        <a class="btn btn--brand" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get my free report</a>
+        <a class="btn btn--ghost" href="#inside">See what’s inside</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section final-cta">
+    <div class="container container--narrow">
+      <div class="card">
+        <h2>Ready to try Barqool?</h2>
+        <p>Fill the form — we’ll send your one-off report. If it clicks, subscribe for weekly briefs at <b>£15/month</b>.</p>
+        <a class="btn" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Open Airtable form</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="logo d-flex">
+      <div class="icon icon--brand-bg">B</div>
+      <span>© <span id="y"></span> Barqool • Built in Dundee</span>
+    </div>
+    <div class="footer-nav">
+      <a href="#">Privacy</a><a href="#">Terms</a>
+      <a href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get my free report</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
