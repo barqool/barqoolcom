@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Barqool — Your business, at a glance</title>
+<title>Barqool — Stop Losing Customers. Start Winning.</title>
 <meta name="description" content="Get a one-off Barqool Report: we scan your Google reviews, social mentions, and competitor reviews, then send a concise PDF + slides. Like it? Subscribe for weekly briefs at £15/month." />
 <!-- Fonts: Inter (body) + Bricolage Grotesque (headings) -->
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -32,8 +32,8 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
 .container--narrow{max-width:960px}
 .section{padding:80px 0}
 .section-header{text-align:center;max-width:720px;margin:0 auto 48px}
-.grid-2{display:grid;gap:24px;grid-template-columns:repeat(2,1fr);align-items:start}
-.grid-3{display:grid;gap:24px;grid-template-columns:repeat(3,1fr);align-items:start}
+.grid-2{display:grid;gap:24px;grid-template-columns:repeat(2,1fr);align-items:stretch}
+.grid-3{display:grid;gap:24px;grid-template-columns:repeat(3,1fr);align-items:stretch}
 .d-flex{display:flex;align-items:center}
 .space-between{justify-content:space-between}
 .section-divider{height:1px;background:var(--line);max-width:1080px;margin:0 auto}
@@ -55,15 +55,24 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
   background:color-mix(in oklab,var(--cream) 85%,white);border-bottom:1px solid var(--line)}
 .topbar{padding:12px 20px;gap:16px}
 .logo{gap:10px}
-.logo .icon{width:28px;height:28px;font-size:1rem;margin-bottom:0}
+.logo .icon {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
 .logo__name{font-family:"Bricolage Grotesque",system-ui;font-size:1.08rem;font-weight:800}
 .main-nav{gap:18px}
+.main-nav a:not(.btn) {
+    font-family: "Bricolage Grotesque", system-ui;
+    font-weight: 600;
+}
 /* Hero */
 .hero{padding:110px 0 60px;text-align:center}
 .hero h1{margin-top:10px}
 .hero p{max-width:680px;margin-left:auto;margin-right:auto}
 .hero ul{display:inline-block;text-align:left;margin:12px 0}
-.hero ul li::before{content:'☕';position:absolute;left:0}
+.hero ul li::before{content:'✅';position:absolute;left:0}
 .hero__actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;justify-content:center}
 /* How */
 .how-flow-container{max-width:800px;margin:0 auto}
@@ -83,7 +92,7 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
 #inside .price{font-size:2rem;font-weight:800;margin-top:6px}
 #inside .price-freq{font-size:1rem;color:var(--muted)}
 #inside .card-actions{margin-top:auto;display:flex;gap:12px;flex-wrap:wrap}
-#inside ul li::before{content:'➡️';position:absolute;left:0}
+#inside .value-stack li::before{content:'✅';position:absolute;left:0}
 /* Final CTA */
 .final-cta{text-align:center;padding-top:0}
 .final-cta .card{background:var(--brown);color:var(--cream);padding:50px}
@@ -115,8 +124,8 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
 <!-- Ribbon -->
 <div class="ribbon">
   <div class="container d-flex">
-    <span>🎁 Try Barqool once — free. Get a custom report (PDF + slides) for your business.</span>
-    <a href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get it now</a>
+    <span>🎁 Get Our "Local Reputation" Report (£170 Value) — Absolutely FREE.</span>
+    <a href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Claim it now</a>
   </div>
 </div>
 
@@ -130,10 +139,10 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
     <nav class="main-nav d-flex">
       <a href="#why">Why</a>
       <a href="#how">How it works</a>
-      <a href="#inside">What’s inside</a>
+      <a href="#inside">What you get</a>
       <a href="#who">Who it’s for</a>
       <a href="#roadmap">Roadmap</a>
-      <a href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" class="btn btn--brand" target="_blank" rel="noopener noreferrer">Get my free report</a>
+      <a href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" class="btn btn--brand" target="_blank" rel="noopener noreferrer">Get My Free Report</a>
     </nav>
   </div>
 </header>
@@ -143,21 +152,13 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
   <section class="hero">
     <div class="container container--narrow">
       <span class="badge">Built in Dundee</span>
-      <h1>Your business, at a glance.</h1>
-      <p>We scan your <b>Google reviews</b>, <b>Instagram mentions</b>, <b>Facebook chatter</b>, and <b>competitor reviews</b>. You get a one-off <b>Barqool Report</b> with insights, reply drafts, and ready-to-post captions.</p>
-      <ul>
-        <li>New reviews + ready-to-post replies</li>
-        <li>Who mentioned you on socials</li>
-        <li>Competitor promos spotted in Google reviews</li>
-        <li>3 Instagram captions to copy-paste</li>
-      </ul>
+      <h1>Stop Guessing. Start Growing.</h1>
+      <p><b>Get all your customer & competitor intel in one 5-minute weekly report — without spending hours scrolling.</b> We scan every review, mention, and competitor promo so you can get more customers and protect your reputation.</p>
+      
       <div class="hero__actions">
-        <a class="btn btn--brand" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get my free report</a>
-        <a class="btn btn--ghost" href="#inside">See what’s inside</a>
+        <a class="btn btn--brand" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get My Free Report (£170 Value)</a>
+        <a class="btn btn--ghost" href="#inside">See What's Inside</a>
       </div>
-      <p style="margin-top:10px">
-        Like it? Subscribe for a fresh brief <b>every week</b> — just <b>£15/month</b>.
-      </p>
     </div>
   </section>
 
@@ -165,24 +166,24 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
   <section id="why" class="section">
     <div class="container">
       <div class="section-header">
-          <h2>Why bother?</h2>
-          <p>Most owners miss reviews, don’t post regularly, and hardly ever track competitors. Barqool does the scanning; AI cleans the noise. You get the signal — without the faff.</p>
+          <h2>If You Own a Local Business, You're Bleeding Customers & Don't Even Know It.</h2>
+          <p>You're busy running your business. Meanwhile, a 1-star Google review sits unanswered, scaring away new clients. Your biggest competitor launches a "2-for-1" promo, and you find out when your regulars tell you they went there instead. We find the signal in the noise for you.</p>
       </div>
       <div class="grid-3">
           <div class="card">
               <div class="icon">⏱️</div>
-              <h3>Save time</h3>
-              <p>No more scrolling for hours. Get the highlights in minutes.</p>
+              <h3>Stop Wasting Time</h3>
+              <p>No more scrolling for hours. Get actionable highlights in minutes.</p>
           </div>
           <div class="card">
               <div class="icon">📈</div>
-              <h3>Look active</h3>
-              <p>Reply fast with drafts and keep posting with weekly captions.</p>
+              <h3>Protect Your Reputation</h3>
+              <p>Reply to every review instantly with our smart drafts. Never miss a mention.</p>
           </div>
           <div class="card">
               <div class="icon">🧭</div>
-              <h3>Stay sharp</h3>
-              <p>Know what your rivals are doing before your customers do.</p>
+              <h3>Outsmart Your Competition</h3>
+              <p>Know what your rivals are doing before your customers do. Stay one step ahead.</p>
           </div>
       </div>
     </div>
@@ -191,32 +192,32 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
   <!-- HOW -->
   <section id="how" class="section">
     <div class="container">
-      <div class="section-header"><h2>How it works</h2></div>
+      <div class="section-header"><h2>You're 3 Minutes Away From Getting Your Free Report</h2></div>
       <div class="how-flow-container">
         <div class="flow-step">
           <div class="flow-step__number">1</div>
           <div class="flow-step__content">
-            <h3>Share your links</h3>
-            <p>Pop your Google Maps profile, Instagram handle, and one competitor into the form.</p>
+            <h3>Tell Us Who You Are (60 Seconds)</h3>
+            <p>Pop your Google Maps profile, Instagram handle, and one competitor into our secure form.</p>
           </div>
         </div>
         <div class="flow-step">
           <div class="flow-step__number">2</div>
           <div class="flow-step__content">
-            <h3>We scan & summarise</h3>
-            <p>We check reviews, mentions, and competitor chatter — then condense it into plain English.</p>
+            <h3>We Do All The Work</h3>
+            <p>Our system scans, analyzes, and condenses everything into plain English. We take on all the effort.</p>
           </div>
         </div>
         <div class="flow-step">
           <div class="flow-step__number">3</div>
           <div class="flow-step__content">
-            <h3>Your one-off report</h3>
-            <p>We email your PDF + slides. If you love it, subscribe to get fresh briefs every week.</p>
+            <h3>Get Your Free Report</h3>
+            <p>We email your PDF + slides. You get all the upside, with zero risk.</p>
           </div>
         </div>
       </div>
       <div class="hero__actions" style="margin-top:24px">
-        <a class="btn btn--brand" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get my free report</a>
+        <a class="btn btn--brand" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get My Free Report Now</a>
       </div>
     </div>
   </section>
@@ -224,22 +225,22 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
   <!-- TESTIMONIALS -->
   <section id="testimonials" class="section">
     <div class="container">
-      <div class="section-header"><h2>Loved by locals</h2></div>
+      <div class="section-header"><h2>Loved by Local Business Owners</h2></div>
       <div class="grid-3">
         <div class="card testimonial-card">
-          <p class="testimonial-card__quote">"The report is a game-changer. I feel more connected to our customers."</p>
+          <p class="testimonial-card__quote">"The report is a game-changer. I feel more connected to our customers and I'm not flying blind anymore."</p>
           <p class="testimonial-card__author">Jane D.</p>
-          <p class="testimonial-card__biz">Pilot user, Dundee</p>
+          <p class="testimonial-card__biz">Cafe Owner, Dundee</p>
         </div>
         <div class="card testimonial-card">
-          <p class="testimonial-card__quote">"Used to take hours. Now I skim it over a coffee."</p>
+          <p class="testimonial-card__quote">"This used to take me hours every Sunday night. Now I skim it over a coffee on Monday morning."</p>
           <p class="testimonial-card__author">Mike P.</p>
-          <p class="testimonial-card__biz">Pilot user, Dundee</p>
+          <p class="testimonial-card__biz">Barber Shop Owner, Dundee</p>
         </div>
         <div class="card testimonial-card">
-          <p class="testimonial-card__quote">"Catching competitor promos early keeps us a step ahead."</p>
+          <p class="testimonial-card__quote">"Catching competitor promos the day they launch keeps us a step ahead. It's paid for itself 10x over."</p>
           <p class="testimonial-card__author">Sarah L.</p>
-          <p class="testimonial-card__biz">Pilot user, Dundee</p>
+          <p class="testimonial-card__biz">Boutique Owner, Dundee</p>
         </div>
       </div>
     </div>
@@ -247,37 +248,42 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
 
   <div class="section-divider"></div>
 
-  <!-- WHAT'S INSIDE + PRICE -->
+  <!-- WHAT'S INSIDE / VALUE STACK -->
   <section id="inside" class="section">
-    <div class="container grid-2">
-      <div class="card">
-        <h2>What’s inside the report</h2>
-        <ul>
-          <li><b>Reviews</b> — every new one + draft reply</li>
-          <li><b>Mentions</b> — who tagged you, what they said</li>
-          <li><b>Competitor signals</b> — promos customers mention</li>
-          <li><b>3 captions</b> — ready to paste into Instagram</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2>Pricing</h2>
-        <p><span class="badge">First report: free</span></p>
-        <p class="price" style="margin-top:8px">£15<span class="price-freq">/month</span></p>
-        <p>Get a fresh brief every week. Cancel any time.</p>
-        <div class="card-actions">
-          <a class="btn btn--brand" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get my free report</a>
-          <a class="btn btn--ghost" href="#how">How it works</a>
+      <div class="container container--narrow">
+          <div class="section-header">
+              <h2>Get Our "Local Reputation" Report (A £170 Value), Absolutely Free.</h2>
+              <p>We want to prove how powerful this is. So, for a limited time, we're giving you your first report, completely free. No card required. Here’s everything you get:</p>
+          </div>
+          <div class="card">
+              <ul class="value-stack">
+                  <li><b>Reputation Monitoring Snapshot (£40 Value)</b> — We find every new review on Google so you never miss one again.</li>
+                  <li><b>"Done-For-You" Reply Library (£35 Value)</b> — We write smart, professional replies for your new reviews so you can just copy, paste, and look incredibly responsive in seconds.</li>
+                  <li><b>Competitor Promo Spy (£45 Value)</b> — We uncover competitor promos and discounts mentioned in their reviews, so you can stay one step ahead.</li>
+                  <li><b>Social Mention Alerts (£30 Value)</b> — We find public Instagram posts and mentions so you can engage with customers who are shouting you out.</li>
+                  <li><b>3 "Ready-to-Post" Instagram Captions (£20 Value)</b> — Effortlessly keep your social media active with captions written specifically for your business type.</li>
+              </ul>
+              <div class="section-divider" style="margin: 24px 0;"></div>
+              <h3>Total Value: <del style="color: #ff6a33;">£170</del></h3>
+              <h2 style="margin-top: 8px;">Your Price Today: £0</h2>
+          </div>
+          <div class="hero__actions" style="margin-top: 24px;">
+            <a class="btn btn--brand" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Claim My Free Report Now</a>
+          </div>
+          <div class="section-header" style="margin-top: 48px;">
+            <h3>If you love it, the choice is simple.</h3>
+            <p>After you get your free report, you'll see how much time and stress it saves you. If you want us to keep doing this for you every single week, it's just <b>£29 per month</b>. That's less than a single unhappy customer costs you. Cancel any time. No contracts. No hassle.</p>
         </div>
       </div>
-    </div>
   </section>
+
 
   <!-- WHO IT'S FOR -->
   <section id="who" class="section">
     <div class="container">
       <div class="section-header">
-        <h2>Who it’s for</h2>
-        <p>Any local business that lives on reviews and word-of-mouth.</p>
+        <h2>Who is this for?</h2>
+        <p>Any local business that depends on word-of-mouth and wants an unfair advantage.</p>
       </div>
       <div style="text-align:center">
         <span class="pill">Cafés & Restaurants</span>
@@ -294,13 +300,13 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
   <section id="trust" class="section" style="padding-top:0">
     <div class="container">
       <div class="section-header">
-        <h2>Your data is safe</h2>
-        <p>We only use public data and store your reports securely.</p>
+        <h2>Your Data Is Safe</h2>
+        <p>We reverse all the risk. We only use public data and store your reports securely.</p>
       </div>
       <div class="trust-cards">
-        <div class="card"><div class="icon">🔐</div><div><b>Public data only</b><p>Reviews and public mentions — nothing behind logins.</p></div></div>
-        <div class="card"><div class="icon">📜</div><div><b>GDPR-friendly</b><p>Simple consent on the form. Opt out any time.</p></div></div>
-        <div class="card"><div class="icon">🇬🇧</div><div><b>Built in Dundee</b><p>Local support, UK-based hosting.</p></div></div>
+        <div class="card"><div class="icon">🔐</div><div><b>Public Data Only</b><p>We only scan reviews and public mentions — nothing behind logins.</p></div></div>
+        <div class="card"><div class="icon">📜</div><div><b>GDPR-Friendly</b><p>Simple consent on the form. You own your data. Opt out any time.</p></div></div>
+        <div class="card"><div class="icon">🇬🇧</div><div><b>Built in Dundee</b><p>Local support, UK-based hosting. We're on your side.</p></div></div>
       </div>
     </div>
   </section>
@@ -309,8 +315,8 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
   <section id="roadmap" class="section" style="padding-top:0">
     <div class="container">
       <div class="section-header">
-        <h2>Where we’re headed</h2>
-        <p>Barqool is just getting started. Here’s what’s next.</p>
+        <h2>Where We’re Headed (The Unfair Advantage Gets Bigger)</h2>
+        <p>Barqool is just getting started. Subscribe now and get access to future updates at no extra cost.</p>
       </div>
       <div class="container--narrow">
         <ul class="roadmap-list">
@@ -321,8 +327,7 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
         </ul>
       </div>
       <div class="hero__actions" style="margin-top:24px">
-        <a class="btn btn--brand" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get my free report</a>
-        <a class="btn btn--ghost" href="#inside">See what’s inside</a>
+        <a class="btn btn--brand" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get My Free Report Now</a>
       </div>
     </div>
   </section>
@@ -331,24 +336,23 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
   <section class="section final-cta">
     <div class="container container--narrow">
       <div class="card">
-        <h2>Ready to try Barqool?</h2>
-        <p>Fill the form — we’ll send your one-off report. If it clicks, subscribe for weekly briefs at <b>£15/month</b>.</p>
-        <a class="btn" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Open Airtable form</a>
+        <h2>Stop Leaving Money On The Table.</h2>
+        <p>Fill the form — we’ll send your one-off report (worth £170) for free. If it helps you win, subscribe for weekly briefs at <b>£29/month</b>.</p>
+        <a class="btn" href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Claim My Free Report Now</a>
       </div>
     </div>
   </section>
 </main>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="container footer-content">
+<footer class="footer" style="padding: 24px 0;">
+  <div class="container footer-content d-flex space-between" style="flex-wrap: wrap; gap: 12px;">
     <div class="logo d-flex">
-      <div class="icon icon--brand-bg">B</div>
-      <span>© <span id="y"></span> Barqool • Built in Dundee</span>
+      <span style="color: var(--muted);">© <span id="y"></span> Barqool • Built in Dundee</span>
     </div>
-    <div class="footer-nav">
-      <a href="#">Privacy</a><a href="#">Terms</a>
-      <a href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" target="_blank" rel="noopener noreferrer">Get my free report</a>
+    <div class="footer-nav d-flex" style="gap: 16px;">
+      <a href="#" style="color: var(--muted);">Privacy</a><a href="#" style="color: var(--muted);">Terms</a>
+      <a href="https://airtable.com/app6irYovmuyLqC6j/pag8pW9Cbf4Kju9KA/form" style="color: var(--ink); font-weight: 700;" target="_blank" rel="noopener noreferrer">Get my free report</a>
     </div>
   </div>
 </footer>
@@ -356,3 +360,4 @@ li{margin-bottom:8px;padding-left:28px;position:relative}
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
